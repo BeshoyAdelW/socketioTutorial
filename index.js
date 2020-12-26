@@ -15,4 +15,9 @@ var io = require("socket.io")(server);
 
 io.on("connection", (socket) => {
   console.log("a user connected", socket.id);
+  // Handle chat event
+  socket.on("chat", function (data) {
+    console.log(data);
+    io.sockets.emit("chat", data);
+  });
 });
