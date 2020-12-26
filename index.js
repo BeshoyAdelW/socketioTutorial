@@ -7,7 +7,5 @@ const server = app.listen(port, () =>
   console.log(`Listening on port ${port}...`)
 );
 
-//Home page
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+//Static files
+app.use(express.static("public"));
